@@ -1,0 +1,2 @@
+class Craver < ApplicationRecord
+end
