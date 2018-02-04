@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20180128060948) do
 
   create_table "purchases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "craver_id"
-    t.date "date"
-    t.decimal "total_price", precision: 10
+    t.decimal "total_price", precision: 13, scale: 2
+    t.datetime "date", default: -> { "CURRENT_TIMESTAMP" }
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["craver_id"], name: "index_purchases_on_craver_id"
